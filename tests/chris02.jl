@@ -2,7 +2,7 @@ using Pkg
 Pkg.add("Enzyme")
 Pkg.add("Oceananigans")
 Pkg.add("UnicodePlots")
-Pkg.add("KernelAbstrations")
+Pkg.add("KernelAbstractions")
 
 using Enzyme
 using Oceananigans
@@ -118,4 +118,7 @@ set!(bc,0)
 j=[0.]
 bj=[1.]
 autodiff(diffuse1d_model!,Duplicated(j,bj), Duplicated(c,bc) )
+
+# dev form
+## autodiff(Reverse, diffuse1d_model!,Duplicated(j,bj), Duplicated(c,bc) )
 
