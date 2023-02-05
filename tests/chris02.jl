@@ -3,6 +3,7 @@ Pkg.add("Enzyme")
 Pkg.add("Oceananigans")
 Pkg.add("UnicodePlots")
 Pkg.add("KernelAbstractions")
+Pkg.add("MacroTools")
 
 using Enzyme
 using Oceananigans
@@ -12,7 +13,6 @@ using KernelAbstractions: @index, @kernel, Event, MultiEvent, NoneEvent
 using KernelAbstractions.Extras.LoopInfo: @unroll
 using Oceananigans.Utils: launch!
 using Oceananigans.Architectures: device
-
 
 # Lets create a one-dimensional array, with N elements, using Oceananigans data structures
 #
