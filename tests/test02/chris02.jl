@@ -60,10 +60,10 @@ function diffuse1d_model!(jcost,fld)
   dt=0.25
   nsteps=50
   for i in 1:nsteps
-    # del21d!(d2buf,fld)
-    for i=1:fld.grid.Nx
-      d2buf[i] = fld[i-1,1,1]+fld[i+1,1,1]-2fld[i,1,1]
-    end
+    del21d!(d2buf,fld)
+    ## for i=1:fld.grid.Nx
+    ##   d2buf[i] = fld[i-1,1,1]+fld[i+1,1,1]-2fld[i,1,1]
+    ## end
     for j in 1:fld.grid.Nx
       fld[j,1,1] = fld[j,1,1] + k*d2buf[j]*dt
     end
